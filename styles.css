@@ -1,0 +1,258 @@
+*{
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: "Funnel Sans", sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primatia: #4f46e5;
+    --secundaria: #7c3aed;
+    --escuro: #0f172a;
+    --maisEscuro: #0a0f1c;
+    --calro: #e2e8f0;
+    --vidro: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background-color: var(--escuro);
+    color: var(--calro);
+}
+
+
+.navegacao {
+    position: fixed;
+    background: var(--maisEscuro);
+    width: 100%;
+    z-index: 100;
+    top: 0;
+    padding: 1.5rem;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+    justify-content: center;
+}
+.menu-link {
+    text-decoration: none;
+    color: var(--calro);
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.menu-link::after {
+    content: "";
+    height: 2px;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(153, 65, 225);
+    transition: width 0.5s ease;
+    z-index: 100;
+}
+
+.menu-link:hover:after {
+    width: 100%;
+}
+
+
+.cabecalho {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 100%;
+}
+
+.foto-perfil {
+    width: 200px;
+    height: 200px;
+    box-shadow: rgba(153, 65, 225, 0.24) 0px 3px 8px;
+    border-radius: 50%;
+    border: 4px var(--secundaria);
+    /*animation: flutuar 5s ease-in-out infinite;*/
+    
+}
+
+.sobre {
+    padding: 6rem 2rem;
+}
+.sobre-titulo {
+    font-size: 3rem;
+    color: var(--calro);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.sobre-caixa {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 2rem;
+    border: 1px solid var(--vidro);
+    backdrop-filter: blur(10px);
+    background: var(--vidro);
+    box-shadow: rgba(153, 65, 225, 0.24) 0px 3px 8px;
+}
+
+.sobre-paragrafo {
+    font-size: 1.2rem;
+}
+
+.projetos {
+    padding: 6rem 2rem;
+}
+
+.projetos-titulo{
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+
+}
+
+.projetos-card:hover{
+    box-shadow: rgba(153, 65, 225, 0.24) 0px 3px 8px;
+    transform: translate(-10px) scale(1.03);
+    transition: all 0.3s;
+}
+.projetos-caixa{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projetos-card{
+    background: var(--vidro);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--vidro);
+    overflow: hidden;
+}
+
+.info-projetos{
+    padding-bottom: 0.5rem;
+}
+.caixa-texto-projeto {
+    padding: 1.5rem;
+}
+.paragrafo-projetos {
+    color: #e2e8f0;
+}
+
+.projetos-img{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.contatos {
+    padding: 6rem 2rem;
+}
+
+.contatos-titulos{
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.formulario-contato {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--vidro);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: rgba(153, 65, 225, 0.24) 0px 3px 8px;
+    
+}
+
+
+.grupo-form {
+    margin-bottom: 1.5rem;
+}
+
+.campo-form{
+    width: 100%;
+    padding: 1rem;
+    background: var(--vidro);
+    border-radius: 8px;
+    border: 1px solid var(--vidro);
+    outline: none;
+    color: var(--calro);
+}
+
+
+.campo-form :focus {
+    border-color: var(--secundaria);
+    box-shadow: rgba(153, 65, 225, 0.24) 0px 3px 8px;
+}
+
+.formulario-contato{
+    width: 100%;
+    padding: 1rem;
+    background: var(--vidro);
+    border-radius: 8px;
+    border: 1px solid var(--vidro);
+    outline: none;
+}
+
+.botao-form {
+    color: var(--calro);
+    background: var(--primatia);
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: all 0.5 ease;
+}
+
+.botao-form :hover{
+    transform: translateY(-4px);
+    box-shadow: rgba(153, 65, 225, 0.24) 0px 3px 8px;;
+}
+
+.particulas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+    background: radial-gradient( circle at 10% 20%, var(--primatia)0%, transparent 20%),
+    radial-gradient( circle at 90% 80%, var(--secundaria)0%, transparent 20%), 
+    var(--maisEscuro);
+    animation: flutuarP 5s ease-in-out infinite;
+
+}
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes flutuarP {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    70% {
+        transform: translateY(70px);
+    }
+}

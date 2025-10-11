@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Meu Portifólio</title>
+</head>
+
+<body>
+    <div class="particulas"></div>
+    <nav class="navegacao">
+        <ul class="menu">
+            <li><a href="#inicio" class="menu-link">Início</a></li>
+            <li><a href="#sobre" class="menu-link">Sobre</a></li>
+            <li><a href="#projetos" class="menu-link">Projetos</a></li>
+            <li><a href="#contato" class="menu-link">Contato</a></li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <img src="img/Sora.jpg" alt="Sora" class="foto-perfil">
+        <h1>Guitarra</h1>
+        <p>Desenvolvedor Front End</p>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Olá! Sou um estudante apaixonado por tecnologia, atualmente no 2º período de Análise e Desenvolvimento
+                de
+                Sistemas.
+
+                Este portfólio é um reflexo da minha jornada de aprendizado em constante evolução. Aqui, você encontrará
+                os
+                projetos que estou desenvolvendo enquanto mergulho no universo da programação, banco de dados, lógica e
+                soluções tecnológicas.
+
+                Cada linha de código representa um desafio superado e um novo conhecimento adquirido. Estou no início da
+                estrada, mas com muita dedicação, curiosidade e vontade de transformar ideias em realidade.
+            </p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meu Projetos</h2>
+
+        <div class="projetos-caixa">
+            <div class="projetos-card">
+                <img src="img/4e3d975ce1e606ab30a8bfc64cf67aa5.jpg" alt="Rey" class="projetos-img">
+                <div class="caixa-texto-projeto">
+                    <h3 class="info-projetos">Rey</h3>
+                    <p class="paragrafo-projetos">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente,
+                        voluptatem facilis. Incidunt tenetur obcaecati odio, fugiat cumque aut. Ducimus earum
+                        accusantium
+                        dolore saepe magnam accusamus eum, aliquid ab voluptas perspiciatis!</p>
+                </div>
+            </div>
+
+
+
+            <div class="projetos-card">
+                <img src="img/1c1d48d6-b026-407e-be56-f11ced428c0a.jpg" alt="bochi" class="projetos-img">
+                <div class="caixa-texto-projeto">
+                    <h3 class="info-projetos">Bochi</h3>
+                    <p class="paragrafo-projetos">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente,
+                        voluptatem facilis. Incidunt tenetur obcaecati odio, fugiat cumque aut. Ducimus earum
+                        accusantium
+                        dolore saepe magnam accusamus eum, aliquid ab voluptas perspiciatis!</p>
+                </div>
+            </div>
+
+
+
+            <div class="projetos-card">
+                <img src="img/download.jpg" alt="lucy" class="projetos-img">
+                <div class="caixa-texto-projeto">
+                    <h3 class="info-projetos">lucy</h3>
+                    <p class="paragrafo-projetos">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente,
+                        voluptatem facilis. Incidunt tenetur obcaecati odio, fugiat cumque aut. Ducimus earum
+                        accusantium
+                        dolore saepe magnam accusamus eum, aliquid ab voluptas perspiciatis!</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="contato" class="contatos">
+        <h2 class="contatos-titulos">Entre em Contato</h2>
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Seu Nome" class="campo-form" id="nome">
+            </div>
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="4" id="mensagem"></textarea>
+            </div>
+            <button type="submit" class="botao-form">Enviar WhatsApp</button>
+        </form>
+    </section>
+
+    <script>
+        function enviarWhats(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '558791921776';
+
+            // Corrigindo o texto e a URL do WhatsApp
+            const texto = `Olá! Me chamo ${nome}. ${mensagem}`;
+            const textoFormatado = encodeURIComponent(texto);
+
+            // URL correta do WhatsApp
+            const url = `https://wa.me/${telefone}?text=${textoFormatado}`;
+
+            window.open(url, '_blank');
+        }
+    </script>
+    <!-- <section id="contato" class="contatos">
+        <h2 class="contatos-titulos">Entre em Contato</h2>
+        <form class="formulario-contato" id="formulario" onsubmit="enviarwhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Seu Nome" class="campo-form" id="nome">
+            </div>
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="4" id="mensagem"></textarea>
+            </div>
+            <button type="submit" class="botao-form">Enviar Whatsapps</button>
+        </form>
+    </section>
+
+    <script>
+
+        function enviarWhats(event) {
+    event.preventDefault(); // Corrige o nome da função e o uso correto
+
+    const nome = document.getElementById('nome').value; // precisa pegar o valor do input
+    const mensagem = document.getElementById('mensagem').value;
+    const telefone = '558791020731'; // DDI + DDD + número
+
+    // Usa template string corretamente com crases
+    const texto = `Olá! Me chamo ${nome}, ${mensagem}`;
+    const msFormatada = encodeURIComponent(texto);
+
+    // Fecha corretamente as aspas e usa interpolação com crases
+    const url = `https://wa.me/${telefone}?text=${msFormatada}`;
+
+    // Corrige o nome da aba e abre o link
+    window.open(url, '_blank');
+}
+        
+    </script>-->
+</body>
+
+</html>
