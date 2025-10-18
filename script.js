@@ -1,17 +1,16 @@
 function enviarWhats(event) {
-    event.preventDefault(); // Corrige o nome da função e o uso correto
+            event.preventDefault();
 
-    const nome = document.getElementById('nome').value; // precisa pegar o valor do input
-    const mensagem = document.getElementById('mensagem').value;
-    const telefone = '558791020731'; // DDI + DDD + número
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '558791020731';
 
-    // Usa template string corretamente com crases
-    const texto = `Olá! Me chamo ${nome}, ${mensagem}`;
-    const msFormatada = encodeURIComponent(texto);
+            // Corrigindo o texto e a URL do WhatsApp
+            const texto = `Olá! Me chamo ${nome}. ${mensagem}`;
+            const textoFormatado = encodeURIComponent(texto);
 
-    // Fecha corretamente as aspas e usa interpolação com crases
-    const url = `https://wame.me/${telefone}?text=${msFormatada}`;
+            // URL correta do WhatsApp
+            const url = `https://wa.me/${telefone}?text=${textoFormatado}`;
 
-    // Corrige o nome da aba e abre o link
-    window.open(url, '_blank');
-}
+            window.open(url, '_blank');
+        }
